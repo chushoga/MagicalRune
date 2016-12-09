@@ -21,8 +21,7 @@ public class ItemManager : MonoBehaviour {
         if (coll.gameObject.tag == "Player")
         {
             GameController.score += 1;
-            //GameController.scoreText.text = "Score: " + GameController.score.ToString();
-            Debug.Log("SCORE:" + GameController.score);
+            // TODO: Instantiate a partical effect
             Destroy(this.gameObject);
         }
     }
