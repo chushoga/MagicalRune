@@ -6,9 +6,8 @@ public class ItemManager : MonoBehaviour {
 
     public float fallSpeed = 1f;
 
-	// Use this for initialization
-	void Start () {
-      
+    // Use this for initialization
+    void Start () {
     }
 	
 	// Update is called once per frame
@@ -21,6 +20,9 @@ public class ItemManager : MonoBehaviour {
         Debug.Log("COLLIDED");
         if (coll.gameObject.tag == "Player")
         {
+            GameController.score += 1;
+            //GameController.scoreText.text = "Score: " + GameController.score.ToString();
+            Debug.Log("SCORE:" + GameController.score);
             Destroy(this.gameObject);
         }
     }
