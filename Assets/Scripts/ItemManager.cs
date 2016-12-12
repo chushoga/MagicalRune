@@ -16,8 +16,7 @@ public class ItemManager : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D coll)
-    {
-        Debug.Log("COLLIDED");
+    {        
         if (coll.gameObject.tag == "Player")
         {
             GameController.score += 1;
