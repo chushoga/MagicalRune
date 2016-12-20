@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
     /// <summary>
     /// 1 - The speed of the ship
     /// </summary>
-    public float speed = 1f;    
+    public float speed = 10f;    
 	private float halfScreen; // half of the screen width
 	private Vector3 clickPos; // clicked or touched position
 
@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
 		#endif
 
 		#if UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-		Debug.Log("Iphone");
+		Debug.Log("MOBILE");
 		#endif
 
 		#if UNITY_STANDALONE_OSX
@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
 		#if UNITY_STANDALONE || UNITY_EDITOR
 
         // 3 - Retrieve the mouse position
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+		if (Input.GetMouseButton(0))
         {
 			clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // set click position
 
@@ -52,9 +52,11 @@ public class PlayerManager : MonoBehaviour
 			// check if greater thatn half the screen. move left if less than and right if greater than.
 			if (clickPos.x < 1f){
 				print("move left");
+				gameObject.transform.Translate(Vector3.left * speed * Time.deltaTime);
 			}
 			if (clickPos.x > 1f) {
 				print("move right");
+				gameObject.transform.Translate(Vector3.right * speed * Time.deltaTime);
 			}
 				
         }
