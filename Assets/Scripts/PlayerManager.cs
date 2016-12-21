@@ -46,12 +46,14 @@ public class PlayerManager : MonoBehaviour
         {
 			clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // set click position
 
-			print("test" + halfScreen); // maybe dont need half the screen
-			print("mouse click pos: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
+			//print("test" + halfScreen); // maybe dont need half the screen
+			//print("mouse click pos: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
 			// check if greater thatn half the screen. move left if less than and right if greater than.
 			if (clickPos.x < 1f){
-				print("move left");
+				print("PLAYER SIZE: " + gameObject.GetComponent<BoxCollider2D>().size);
+				print("PLAYER POS: " + gameObject.transform.position);
+				print("--------------------------------------------------------------");
 				gameObject.transform.Translate(Vector3.left * speed * Time.deltaTime);
 			}
 			if (clickPos.x > 1f) {
