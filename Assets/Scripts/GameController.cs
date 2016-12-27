@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-    public GameObject hazard;
+    public GameObject[] hazard;
     public Vector3 spawnValues;
     public int hazardCount;
     public float spawnWait;
@@ -34,9 +34,13 @@ public class GameController : MonoBehaviour {
         {
             for(int i = 0; i < hazardCount; i++)
             {
+				// TODO function to randomize the drops depending on level and time etc.
+				// for now just going to select random.
+
+				int rnd = Random.Range(0, hazard.Length);
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(hazard, spawnPosition, spawnRotation);
+                Instantiate(hazard[rnd], spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
