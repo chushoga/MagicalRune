@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour {
         UpdateScore();
     }
 
+	// TODO: Add a Spawn Pickups Coroutine to handle Pickups. For now they are mixed into the drops.
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);

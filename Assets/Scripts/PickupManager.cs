@@ -20,7 +20,7 @@ public class PickupManager : MonoBehaviour {
 		if (coll.gameObject.tag == "Player")
 		{
 			stillFalling = false;
-
+			// TODO: Add the bonus type of this object to the player. Effect or Score Bonus.
 			Destroy(this.gameObject);
 		}
 
