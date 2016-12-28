@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour {
 
+	public GameObject explosionPart;
     public float fallSpeed = 1f;
 
     // Use this for initialization
@@ -28,6 +29,7 @@ public class ItemManager : MonoBehaviour {
 		{
 			GameController.score -= 1;
 			// TODO: Instantiate a partical effect
+			Instantiate(explosionPart, this.transform.position, Quaternion.identity);
 			Destroy(this.gameObject);
 		}
     }
