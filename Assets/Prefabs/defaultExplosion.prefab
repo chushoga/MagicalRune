@@ -108,7 +108,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 469490040
+  randomSeed: 631195016
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -563,7 +563,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 3
     enabled: 1
-    type: 0
+    type: 2
     radius: 0.21
     angle: 4.5445795
     length: 5
@@ -2330,7 +2330,7 @@ ParticleSystem:
       type: 0
       properties: 0
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 0
     light: {fileID: 0}
     randomDistribution: 1
@@ -2726,7 +2726,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.25
+  m_MaxParticleSize: 0.35
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2

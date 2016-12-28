@@ -28,7 +28,7 @@ public class ItemManager : MonoBehaviour {
 		if (coll.gameObject.tag == "OutOfBounds")
 		{
 			GameController.score -= 1;
-			// TODO: Instantiate a partical effect
+
 			Instantiate(explosionPart, this.transform.position, Quaternion.identity);
 			Destroy(this.gameObject);
 		}

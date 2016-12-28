@@ -371,14 +371,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 12
-    m_MaxSize: 18
+    m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 12
-  m_Text: '2
+  m_Text: 'Medium
 
 '
 --- !u!222 &1520438063
@@ -419,10 +419,10 @@ RectTransform:
   m_Father: {fileID: 1100955646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 180.3, y: -106.6}
-  m_SizeDelta: {x: 201.9, y: 66}
+  m_AnchorMin: {x: 0.081, y: 0.2801936}
+  m_AnchorMax: {x: 0.915, y: 0.7133548}
+  m_AnchoredPosition: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: -5.100006, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660460911
 MonoBehaviour:
