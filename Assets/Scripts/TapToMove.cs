@@ -58,23 +58,33 @@ public class TapToMove : MonoBehaviour {
 				// save the click/tap postion
 				endPoint = hit.point;
 
-				Debug.Log("HIT COLLIDER" + endPoint);
-				Debug.Log("HIT COLLIDER" + endPoint);
+
 
 				// because we do not want to change the y axis value based on touch 
 				// position, reset it to the origional y axis value
-				endPoint.x = xAxis;
+				//endPoint.y = xAxis;
+
+				//Debug.Log("HIT COLLIDER" + endPoint.x);
 
 			}
-			//Debug.Log("HIT COLLIDER CHECKED" + flag);
+//
+//			Debug.Log("HIT COLLIDER CHECKED: "  + flag);
+//			Debug.Log("position mag " + gameObject.transform.position.magnitude);
+//			Debug.Log("endPoint mag " + endPoint.magnitude);
+//			Debug.Log("APPROX" + Mathf.Approximately(gameObject.transform.position.magnitude, endPoint.magnitude));
+//			Debug.Log("------------------------------------------------------------");
 
 			// check if the flag for movement is true and the current position
 			// is not the same as the clicked/touched position
 			if(flag && !Mathf.Approximately(gameObject.transform.position.magnitude, endPoint.magnitude))
 			{
-				gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, 
-															endPoint, 
-															1/(duration*(Vector3.Distance(gameObject.transform.position, endPoint))));
+//				gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, 
+//															endPoint, 
+//															1/(duration*(Vector3.Distance(gameObject.transform.position, endPoint))));
+//				Debug.Log(gameObject.transform.position);
+//				Debug.Log(endPoint);
+//				Debug.Log(1/(duration*(Vector3.Distance(gameObject.transform.position, endPoint))));
+				gameObject.transform.position = new Vector3(endPoint.x, endPoint.y, endPoint.z);
 			} 
 			// set the movement indictor flag to false if the endpoint and current gameobject position are equal
 			else if(flag && Mathf.Approximately(gameObject.transform.position.magnitude, endPoint.magnitude)) 
