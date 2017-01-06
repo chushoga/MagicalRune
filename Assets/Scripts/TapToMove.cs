@@ -15,12 +15,12 @@ public class TapToMove : MonoBehaviour {
 	public float duration = 50.0f;
 
 	// vertical position of object
-	private float yAxis;
+	private float xAxis;
 
 	// Use this for initialization
 	void Start () {
 		// save the y axis value of gameobject
-		yAxis = gameObject.transform.position.y;
+		xAxis = gameObject.transform.position.x;
 
 	}
 	
@@ -29,22 +29,28 @@ public class TapToMove : MonoBehaviour {
 		// check if the screen is touched or clicked
 		if((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || (Input.GetMouseButtonDown(0)))
 		{
-			// decalare a variable of RaycastHit struct
-			RaycastHit hit;
+			//RaycastHit2D hit;
 
 			// create a Ray on the tapped/click postion
 			Ray ray;
 
 			// for unity editor
 			#if UNITY_EDITOR
+			//Debug.Log("UNITY EDITOR");
 			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			// for touch devices
 			#elif (UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8)
+			//Debug.Log("MOBILE");
 			ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 			#endif
-			Debug.Log(ray);
+
+			// decalare a variable of RaycastHit struct
+			RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+			//Debug.Log(hit);
+
 			// Check if the ray hits any collider
-			if(Physics.Raycast(ray, out hit))
+
+			if(hit)
 			{
 				// set flag to indicate to move the object
 				flag = true;
@@ -52,11 +58,15 @@ public class TapToMove : MonoBehaviour {
 				// save the click/tap postion
 				endPoint = hit.point;
 
+				Debug.Log("HIT COLLIDER" + endPoint);
+				Debug.Log("HIT COLLIDER" + endPoint);
+
 				// because we do not want to change the y axis value based on touch 
 				// position, reset it to the origional y axis value
-				endPoint.y = yAxis;
+				endPoint.x = xAxis;
 
 			}
+			//Debug.Log("HIT COLLIDER CHECKED" + flag);
 
 			// check if the flag for movement is true and the current position
 			// is not the same as the clicked/touched position
