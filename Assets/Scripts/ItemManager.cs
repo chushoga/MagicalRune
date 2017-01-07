@@ -17,18 +17,28 @@ public class ItemManager : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D coll)
-    {        
-        if (coll.gameObject.tag == "Player")
+    {       
+		// ENEMY minus score if hits player
+		if (coll.gameObject.tag == "Player")
         {
-            GameController.score += 1;
-            // TODO: Instantiate a partical effect
-            Destroy(this.gameObject);
+			if (gameObject.tag == "Enemy") {
+				GameController.score -= 1;
+				Destroy(this.gameObject);
+				// TODO: Instantiate a partical effect
+			} else {
+				GameController.score += 1;
+				Destroy(this.gameObject);
+				// TODO: Instantiate a partical effect
+			}
         }
 
-		if (coll.gameObject.tag == "OutOfBounds")
-		{
-			GameController.score -= 1;
+		// if the gameobject hits of its same tag then destroy the collided one
+		if (gameObject.tag == coll.gameObject.tag) {
+			Destroy (this.gameObject);
+		}
 
+		if (coll.gameObject.tag == "OutOfBounds")
+		{			
 			Instantiate(explosionPart, this.transform.position, Quaternion.identity);
 			Destroy(this.gameObject);
 		}

@@ -17,17 +17,31 @@ public class PickupManager : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll)
 	{        
-		if (coll.gameObject.tag == "Player")
+		if (coll.gameObject.tag == "Player") {
+			stillFalling = false;
+			// TODO: Add the bonus type of this object to the player. Effect or Score Bonus.
+			Destroy(this.gameObject);
+		}
+
+		if (coll.gameObject.tag == "OutOfBounds") {
+			stillFalling = false;
+			// TODO: start the coroutine to let the item destroy itself after set seconds.
+		}
+
+		if (coll.gameObject.tag == "Rune" || coll.gameObject.tag == "Enemy") 
 		{
 			stillFalling = false;
 			// TODO: Add the bonus type of this object to the player. Effect or Score Bonus.
 			Destroy(this.gameObject);
 		}
 
-		if (coll.gameObject.tag == "OutOfBounds")
+		// if it hits itself destory one of them
+		if (coll.gameObject.tag == gameObject.tag)
 		{
 			stillFalling = false;
-			// TODO: start the coroutine to let the item destroy itself after set seconds.
+			// TODO: Add Sound and destroy particle effect?
+			Destroy(this.gameObject);
 		}
+
 	}
 }
