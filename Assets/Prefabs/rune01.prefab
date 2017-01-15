@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2c4c4a3d41783419456f6e8fc01c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPart: {fileID: 1049786639564330, guid: 0e3ea5a3acb52f14580d47147b4d43ea,
+  explosionPart: {fileID: 1897841162301436, guid: 1ce41916c1c4ef14186911cf3e74c8a2,
     type: 2}
   fallSpeed: 1
 --- !u!212 &212508845316278564
@@ -121,8 +121,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300006, guid: cc921ac7f5e5e9c4db991ef91dfee5fd, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.88235295, g: 0.88235295, b: 0.88235295, a: 1}
   m_FlipX: 0
   m_FlipY: 0

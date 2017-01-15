@@ -13,7 +13,7 @@ public class DestroyParticleSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	IEnumerator RemoveParticleSystem() {
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(0.5f);
 		Destroy(this.gameObject);
 	}
 }
