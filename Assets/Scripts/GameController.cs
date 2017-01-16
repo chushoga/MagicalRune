@@ -6,7 +6,13 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
     public GameObject[] hazard;
-    public Vector3 spawnValues;
+	public Vector3 spawnValues;
+
+	private float screenWidth;
+	private float screenHeight;
+
+	private Vector3 testSpawnValues;
+
     public int hazardCount;
     public float spawnWait;
     public float startWait;
@@ -17,6 +23,17 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// get the screen width and height
+		screenWidth = Screen.width;
+		screenHeight = Screen.height;
+
+
+		Vector3 playerPosScreen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2 + 7, Screen.height/2, Camera.main.nearClipPlane +5));
+		Quaternion spawnRotation = Quaternion.identity;
+		Instantiate(hazard[1], playerPosScreen, spawnRotation);
+		Debug.Log(playerPosScreen);
+		// set the spawn area
+
         score = 0; // start the core at 0
         UpdateScore();
         StartCoroutine(SpawnWaves());
