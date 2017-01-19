@@ -18,6 +18,10 @@ public class GameController : MonoBehaviour {
     public Text scoreText;
     public static int score; // set score
 
+	public Text healthText; // temp....
+	public static int playerHealth; // player health
+
+
 	// Use this for initialization
 	void Start () {
 		// get the screen width and height
@@ -26,15 +30,16 @@ public class GameController : MonoBehaviour {
 		// TEST
 		// set the spawn area
 		// -------------------------------------------------------------------------------------------------------------------------------------
-
+		/*
 		Vector3 playerPosScreen = new Vector3(7.5f, 7.5f, 0f);
 		Quaternion spawnRotation = Quaternion.identity;
 		Instantiate(hazard[1], playerPosScreen, spawnRotation);
 		Debug.Log(playerPosScreen);
-
+*/
 		// -------------------------------------------------------------------------------------------------------------------------------------
 
-        score = 0; // start the core at 0
+		score = 0; // start the core at 0
+		playerHealth = 3; // health starting at this.
         UpdateScore();
         StartCoroutine(SpawnWaves());
 	}
@@ -68,5 +73,6 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void UpdateScore () {
         scoreText.text = "" + score;
+		healthText.text = "" + playerHealth;
 	}
 }
