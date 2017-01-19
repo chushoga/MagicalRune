@@ -10,8 +10,6 @@ using UnityEngine;
 public class TapToMove : MonoBehaviour {
 	
 	//REFERENCES
-	Rigidbody2D rb;
-	SpriteRenderer sr;
 	Animator anim;
 
 	// flag to check if the user had tapped or clicked
@@ -29,8 +27,6 @@ public class TapToMove : MonoBehaviour {
 	public float speed = 1;
 
 	void Awake () {
-		rb = GetComponent<Rigidbody2D>();
-		sr = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
 	}
 

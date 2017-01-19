@@ -1364,7 +1364,7 @@ MonoBehaviour:
   - {fileID: 1629494182071400, guid: 83be66ab6ef67cd428bf88fb258f3de2, type: 2}
   - {fileID: 1629494182071400, guid: 50e6e8eae5b910e4cb68c7f43db519c8, type: 2}
   - {fileID: 1629494182071400, guid: 4879ff449e9d92145b294634430de4ac, type: 2}
-  spawnValues: {x: -7.5, y: 7.5, z: 0}
+  spawnValues: {x: 7.5, y: 7.5, z: 0}
   hazardCount: 5
   spawnWait: 1
   startWait: 1

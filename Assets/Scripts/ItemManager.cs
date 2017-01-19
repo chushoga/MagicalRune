@@ -5,7 +5,9 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour {
 
 	public GameObject explosionPart;
-    public float fallSpeed = 1f;
+
+	[SerializeField]
+    private float fallSpeed = 1f;
 
     // Use this for initialization
     void Start () {
