@@ -510,11 +510,11 @@ MonoBehaviour:
   hazard:
   - {fileID: 1629494182071400, guid: 6a6fabee9258b1e4bb43db7ddc0b5ced, type: 2}
   - {fileID: 1629494182071400, guid: 6a6fabee9258b1e4bb43db7ddc0b5ced, type: 2}
-  spawnValues: {x: 7, y: 2, z: 0}
-  hazardCount: 1
+  spawnValues: {x: 7, y: 7, z: 0}
+  hazardCount: 200
   spawnWait: 0
   startWait: 0
-  waveWait: 0
+  waveWait: 10
   scoreText: {fileID: 1808991366}
   healthText: {fileID: 504872716}
 --- !u!4 &635794926
@@ -1446,7 +1446,7 @@ Prefab:
     - target: {fileID: 212635983582555366, guid: 46ee08e908166f24db6368f5ddfda0cd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46ee08e908166f24db6368f5ddfda0cd, type: 2}

@@ -46,7 +46,8 @@ public class GameController : MonoBehaviour {
 
     void Update()
     {
-        UpdateScore();
+		// REMOVED UPDATE SCORE HERE. Now relying on the individual eneimies/points to update the score themselves.
+		// make a helper class and function to update the score depending on what is passed in???
     }
 
 	// TODO: Add a Spawn Pickups Coroutine to handle Pickups. For now they are mixed into the drops.
@@ -62,9 +63,16 @@ public class GameController : MonoBehaviour {
 
 				int rnd = Random.Range(0, hazard.Length);
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(hazard[rnd], spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(spawnWait);
+				Quaternion spawnRotation = Quaternion.identity;
+
+				// check if allready occupied
+				bool isOccupied = Physics2D.OverlapCircle(spawnPosition, 1f);
+
+				// if the space is not occupied then you can spawn.
+				if (isOccupied == false){
+					Instantiate(hazard[rnd], spawnPosition, spawnRotation);
+				}
+				yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
         }        
@@ -72,7 +80,9 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void UpdateScore () {
+		
         scoreText.text = "" + score;
 		healthText.text = "" + playerHealth;
+
 	}
 }
