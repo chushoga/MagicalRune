@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4412120180286816}
   - component: {fileID: 212078084803549358}
   - component: {fileID: 50217100819684390}
-  - component: {fileID: 114522177800919110}
   - component: {fileID: 58874347855076274}
+  - component: {fileID: 114279985717768252}
   m_Layer: 0
   m_Name: pickUp01
   m_TagString: Rune
@@ -77,7 +77,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4426887
---- !u!114 &114522177800919110
+--- !u!114 &114279985717768252
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -88,7 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd952a1eeb4464449e7452ff077bdef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 2
+  fallSpeed: 10
+  timeout: 3
 --- !u!212 &212078084803549358
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -23,23 +23,15 @@ public class DroppedEnemy : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll)
 	{       
 		// ENEMY minus score if hits player
-		if (coll.gameObject.tag == "Player")
-		{
+		if (coll.gameObject.tag == "Player") {
 			// DAMAGE THE PLAYER HEALTH
 			GameController.playerHealth -= 1;
-			Debug.Log("HP: " + GameController.playerHealth);
-
-		}
-
-		// if the gameobject hits of its same tag then destroy the collided one
-		if (gameObject.tag == coll.gameObject.tag) {
-			
-		}
-
-		if (coll.gameObject.tag == "OutOfBounds")
-		{			
-			GameController.score += 1000;
-			Debug.Log("SCORE: " + GameController.score);
+			Debug.Log ("HP: " + GameController.playerHealth);
+		} else if (coll.gameObject.tag == "OutOfBounds") {
+			// TODO minus points??
+		} else {
+			// destroy the object it hit
+			Destroy(coll.gameObject);
 		}
 
 		Instantiate(explosionPart, this.transform.position, Quaternion.identity);

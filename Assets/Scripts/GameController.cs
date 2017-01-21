@@ -46,8 +46,7 @@ public class GameController : MonoBehaviour {
 
     void Update()
     {
-		// REMOVED UPDATE SCORE HERE. Now relying on the individual eneimies/points to update the score themselves.
-		// make a helper class and function to update the score depending on what is passed in???
+		UpdateScore ();
     }
 
 	// TODO: Add a Spawn Pickups Coroutine to handle Pickups. For now they are mixed into the drops.
