@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour {
 
 	public Text healthText; // temp....
 	public static int playerHealth; // player health
+	public static int playerMaxHealth;
 
 
 	// Use this for initialization
@@ -39,7 +40,8 @@ public class GameController : MonoBehaviour {
 		// -------------------------------------------------------------------------------------------------------------------------------------
 
 		score = 0; // start the core at 0
-		playerHealth = 3; // health starting at this.
+		playerHealth = 100; // health starting at this.
+		playerMaxHealth = playerHealth;
         UpdateScore();
         StartCoroutine(SpawnWaves());
 	}

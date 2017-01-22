@@ -25,8 +25,8 @@ public class DroppedEnemy : MonoBehaviour {
 		// ENEMY minus score if hits player
 		if (coll.gameObject.tag == "Player") {
 			// DAMAGE THE PLAYER HEALTH
-			GameController.playerHealth -= 1;
-			Debug.Log ("HP: " + GameController.playerHealth);
+			GameController.playerHealth -= 10;
+
 		} else if (coll.gameObject.tag == "OutOfBounds") {
 			// TODO minus points??
 		} else {
@@ -37,4 +37,6 @@ public class DroppedEnemy : MonoBehaviour {
 		Instantiate(explosionPart, this.transform.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
+
+
 }
