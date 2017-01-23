@@ -16,8 +16,7 @@ public class PlayerManager : MonoBehaviour
     }
 
 	void OnCollisionEnter2D(Collision2D coll)
-	{
-		Debug.Log ("error");
+	{		
 		// ENEMY minus score if hits player
 		if (coll.gameObject.tag == "Enemy") {
 			
@@ -26,9 +25,8 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	IEnumerator ShowDamage(SpriteRenderer sr){
-		Debug.Log ("started");
 		//yield return new WaitForSeconds (5);
-		for(var n = 0; n < 5; n++)
+		for(var n = 0; n < 3; n++)
 		{
 			sr.color = new Color (255,0,0);
 			sr.enabled = true;
