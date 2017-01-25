@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 10
   timeout: 3
+  icon: {fileID: 21300000, guid: b68cb3a26b533934ab093d8a4e5a4553, type: 3}
 --- !u!212 &212078084803549358
 SpriteRenderer:
   m_ObjectHideFlags: 1

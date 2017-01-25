@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DroppedPickup : MonoBehaviour {
-	
-	[SerializeField]
-	public float fallSpeed = 1f;
 
-	[SerializeField]
-	private float timeout = 5f;
+
+	[SerializeField] float fallSpeed = 1f;
+	[SerializeField] float timeout = 5f;
+	public Sprite icon;
 
 	// check if the object is still falling or not.
 	private bool stillFalling = true;
