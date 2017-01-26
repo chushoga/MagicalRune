@@ -5,5 +5,21 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
-	public const int numIntemSlots = 4;
+	public Image[] itemImages = new Image[numItemSlots];
+	public Item[] items = new Item[numItemSlots];
+
+	public const int numItemSlots = 4;
+
+
+	public void AddItem(Item itemToAdd){
+		for (int i = 0; i < items.Length; i++) {
+			if (items[i] == null) {
+				items[i] = itemToAdd;
+				itemImages[i].sprite = itemToAdd.sprite;
+				itemImages[i].enabled = true;
+				return;
+			}
+		}
+	}
+
 }
