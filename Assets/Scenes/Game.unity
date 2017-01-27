@@ -518,6 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528721032}
   - component: {fileID: 528721033}
+  - component: {fileID: 528721034}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -569,6 +570,27 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &528721034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 528721031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83caf51f6a09c8146982f9912a6ff935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &551011893
 Prefab:
   m_ObjectHideFlags: 0

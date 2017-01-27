@@ -22,4 +22,15 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+	public void RemoveItem(Item itemToRemove){
+		for (int i = 0; i < items.Length; i++) {
+			if (items[i] == itemToRemove) {
+				items[i] = null;
+				itemImages[i].sprite = null;
+				itemImages[i].enabled = false;
+				return;
+			}
+		}
+	}
+
 }
