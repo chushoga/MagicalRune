@@ -1,4 +1,5 @@
 ﻿public class LostItemReaction : DelayedReaction {
+	
 	public Item item;
 
 	private Inventory inventory;
