@@ -36,7 +36,6 @@ public class BarScript : MonoBehaviour {
 		
 			content.fillAmount = fillAmount;	
 
-
 	}
 
 	private float Map(float value, float inMin, float inMax, float outMin, float outMax){
