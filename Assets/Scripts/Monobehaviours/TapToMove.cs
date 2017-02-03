@@ -61,13 +61,15 @@ public class TapToMove : MonoBehaviour {
 
 			// Check if the ray hits any collider
 			if(hit) {
-				
-				flag = true; // set hit flag to true
-				
-				// save the click/tap postion
-				endPoint.x = hit.point.x;
-				endPoint.y = transform.position.y;
-				endPoint.z = transform.position.z;
+				if(hit.collider.gameObject.tag != "GUI"){
+					flag = true; // set hit flag to true
+					Debug.Log("GUI");
+					// save the click/tap postion
+					endPoint.x = hit.point.x;
+					endPoint.y = transform.position.y;
+					endPoint.z = transform.position.z;
+				}
+				Debug.Log(hit.collider.gameObject.tag); // TODO work on this. Tag layer maybe. Will not see item that is clicked all of the time.
 			}
 		}
 
