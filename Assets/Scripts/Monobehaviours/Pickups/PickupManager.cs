@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupManager : MonoBehaviour {
 
-	[SerializeField] private float minorHealth = 10;
+	[SerializeField] private int minorHealth = 10;
 	[SerializeField]private GameObject button;
 	[SerializeField]private GameObject inventoryBar;
 
@@ -21,6 +21,13 @@ public class PickupManager : MonoBehaviour {
 		// ADD A MINOR AMOUNT OF HEALTH
 		// TRIGGER ADD HEALTH SPARKLE EFFECT HERE.
 		Debug.Log("minorHeath: " + minorHealth);
+		GameController.playerHealth -= minorHealth;
+
+	}
+
+	public void DestroyMe(){
+
+		Destroy (this.gameObject);
 
 	}
 

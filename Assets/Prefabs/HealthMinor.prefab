@@ -141,7 +141,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114044280130907828, guid: a630db5aa975ea441b46fb1b4bf9caa9,
+          type: 2}
         m_MethodName: HealthMinor
         m_Mode: 1
         m_Arguments:
