@@ -413,6 +413,12 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114483094650799462, guid: 46ee08e908166f24db6368f5ddfda0cd,
+        type: 2}
+      propertyPath: moveToFlag
+      value: 
+      objectReference: {fileID: 1404665461593572, guid: 0e818b22562aaa340b798db70f2b3680,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46ee08e908166f24db6368f5ddfda0cd, type: 2}
   m_IsPrefabParent: 0

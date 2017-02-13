@@ -26,6 +26,10 @@ public class TapToMove : MonoBehaviour {
 	// alter this to change the speed of movement
 	public float speed = 1;
 
+	// move to flag sprite
+	// spawn at the location of click
+	[SerializeField] private GameObject moveToFlag;
+
 	void Awake () {
 		anim = GetComponent<Animator>();
 	}
@@ -68,6 +72,10 @@ public class TapToMove : MonoBehaviour {
 					endPoint.x = hit.point.x;
 					endPoint.y = transform.position.y;
 					endPoint.z = transform.position.z;
+
+					// spawn flag here then removit it when it reaches destination
+					Quaternion spawnRotation = Quaternion.identity;
+					Instantiate(moveToFlag, endPoint, spawnRotation);
 				}
 				Debug.Log(hit.collider.gameObject.tag); // TODO work on this. Tag layer maybe. Will not see item that is clicked all of the time.
 			}
@@ -81,6 +89,7 @@ public class TapToMove : MonoBehaviour {
 			// put things you want to happen only once here.
 			if (flag == true)
 			{
+				Destroy(moveToFlag);
 				//Debug.Log("Destination Reached");
 			}
 
