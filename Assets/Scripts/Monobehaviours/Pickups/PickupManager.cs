@@ -10,10 +10,11 @@ public class PickupManager : MonoBehaviour {
 	void Update() {
 		if (Input.GetKeyDown ("space")) {
 			print ("space key was pressed");
-			GameObject newButton = Instantiate (button) as GameObject;
+			GameObject newButton = Instantiate (pickup) as GameObject;
 			newButton.transform.SetParent (inventoryBar.transform, false);
 		}
 	}
 
 
 }
+	

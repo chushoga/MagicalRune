@@ -73,9 +73,8 @@ public class TapToMove : MonoBehaviour {
 					endPoint.y = transform.position.y;
 					endPoint.z = transform.position.z;
 
-					// spawn flag here then removit it when it reaches destination
-					Quaternion spawnRotation = Quaternion.identity;
-					Instantiate(moveToFlag, endPoint, spawnRotation);
+					// instantiate the move to flag.
+					StartCoroutine(RemoveFlag(moveToFlag, endPoint));
 				}
 				Debug.Log(hit.collider.gameObject.tag); // TODO work on this. Tag layer maybe. Will not see item that is clicked all of the time.
 			}
@@ -89,7 +88,7 @@ public class TapToMove : MonoBehaviour {
 			// put things you want to happen only once here.
 			if (flag == true)
 			{
-				Destroy(moveToFlag);
+				
 				//Debug.Log("Destination Reached");
 			}
 
@@ -126,4 +125,38 @@ public class TapToMove : MonoBehaviour {
 
 	
 	}
+
+	IEnumerator RemoveFlag(GameObject gm, Vector3 endPoint)
+	{
+
+		GameObject flag = gm;
+
+		// first find any movetoflags and remove them.
+		GameObject removeGm = GameObject.Find("MoveToFlag");
+		if(removeGm == true){
+			Debug.Log("found");
+			Destroy(removeGm);
+		} else {
+			Debug.Log("not found");
+		}
+
+		// spawn flag here then removit it when it reaches destination
+		Quaternion spawnRotation = Quaternion.identity;
+		flag = Instantiate(flag, endPoint, spawnRotation);
+
+		SpriteRenderer sr = flag.GetComponent<SpriteRenderer>();
+
+		for(var n = 0; n < 3; n++)
+		{
+			sr.color = new Color (255,0,0);
+			sr.enabled = true;
+			yield return new WaitForSeconds(.1f);
+			sr.enabled = false;
+			yield return new WaitForSeconds(.1f);
+		}
+		sr.enabled = true;
+		sr.color = new Color (255,255,255);
+		Destroy(flag);
+	}
+
 }

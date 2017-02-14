@@ -1167,6 +1167,12 @@ Prefab:
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 528721031}
+    - target: {fileID: 114044280130907828, guid: a630db5aa975ea441b46fb1b4bf9caa9,
+        type: 2}
+      propertyPath: pickup
+      value: 
+      objectReference: {fileID: 1782480641597956, guid: 6ee915cc03d72d14184b43f6d9b0ed0d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a630db5aa975ea441b46fb1b4bf9caa9, type: 2}
   m_IsPrefabParent: 0
