@@ -67,7 +67,6 @@ public class TapToMove : MonoBehaviour {
 			if(hit) {
 				if(hit.collider.gameObject.tag != "GUI"){
 					flag = true; // set hit flag to true
-					Debug.Log("GUI");
 					// save the click/tap postion
 					endPoint.x = hit.point.x;
 					endPoint.y = transform.position.y;
@@ -131,15 +130,6 @@ public class TapToMove : MonoBehaviour {
 
 		GameObject flag = gm;
 
-		// first find any movetoflags and remove them.
-		GameObject removeGm = GameObject.Find("MoveToFlag");
-		if(removeGm == true){
-			Debug.Log("found");
-			Destroy(removeGm);
-		} else {
-			Debug.Log("not found");
-		}
-
 		// spawn flag here then removit it when it reaches destination
 		Quaternion spawnRotation = Quaternion.identity;
 		flag = Instantiate(flag, endPoint, spawnRotation);
@@ -156,6 +146,8 @@ public class TapToMove : MonoBehaviour {
 		}
 		sr.enabled = true;
 		sr.color = new Color (255,255,255);
+
+		// remove Flag
 		Destroy(flag);
 	}
 
