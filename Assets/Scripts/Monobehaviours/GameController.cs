@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// get the screen width and height
-		Debug.Log(Screen.height);
 		// -------------------------------------------------------------------------------------------------------------------------------------
 		// TEST
 		// set the spawn area

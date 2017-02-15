@@ -38,14 +38,14 @@ public class MoveToFlag : MonoBehaviour {
 
 		for(var n = 0; n < 3; n++)
 		{
-			sr.color = new Color (255,0,0);
+			//sr.color = new Color (255,0,0);
 			sr.enabled = true;
 			yield return new WaitForSeconds(.1f);
 			sr.enabled = false;
 			yield return new WaitForSeconds(.1f);
 		}
 		sr.enabled = true;
-		sr.color = new Color (255,255,255);
+		//sr.color = new Color (255,255,255);
 		Destroy(flag);
 	}
 }
