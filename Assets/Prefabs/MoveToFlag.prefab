@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4872890654627362}
   - component: {fileID: 212795759394795882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MoveToFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: aa54ee297188f0e4e81fec6c83096a23, type: 3}
   m_Color: {r: 255, g: 255, b: 255, a: 1}
   m_FlipX: 0
