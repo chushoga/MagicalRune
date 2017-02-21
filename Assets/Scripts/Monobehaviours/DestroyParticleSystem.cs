@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestroyParticleSystem : MonoBehaviour {
 
+	[SerializeField] float destoryAfterSeconds = 0.5f;
+
 	// Use this for initialization
 	void Start () {
 
@@ -13,7 +15,7 @@ public class DestroyParticleSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	IEnumerator RemoveParticleSystem() {
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(destoryAfterSeconds);
 		Destroy(this.gameObject);
 	}
 }

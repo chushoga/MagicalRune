@@ -408,6 +408,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114483094650799462, guid: 46ee08e908166f24db6368f5ddfda0cd,
+        type: 2}
+      propertyPath: moveToParticle
+      value: 
+      objectReference: {fileID: 1699347495977782, guid: 4db3f08283c43b041aa66ddf33558d02,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46ee08e908166f24db6368f5ddfda0cd, type: 2}
   m_IsPrefabParent: 0
