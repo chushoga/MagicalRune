@@ -30,8 +30,6 @@ public class TapToMove : MonoBehaviour {
 	// spawn at the location of click
 	[SerializeField] GameObject moveToFlag;
 
-	[SerializeField] GameObject moveToParticle;
-
 	void Awake () {
 		anim = GetComponent<Animator>();
 	}
@@ -74,12 +72,14 @@ public class TapToMove : MonoBehaviour {
 					endPoint.y = transform.position.y;
 					endPoint.z = transform.position.z;
 
+					if(GameObject.Find("MoveToFlag(Clone)") != null){
+						Debug.Log("IT EXISTS");
+						GameObject.Find("MoveToFlag(Clone)").SetActive(false);
+					}
+
 					// instantiate the move to flag.
 					StartCoroutine(RemoveFlag(moveToFlag, endPoint));
 
-					// spawn the move to particle
-					Quaternion spawnRotation = Quaternion.identity;
-					Instantiate(moveToParticle, endPoint, spawnRotation);
 				}
 				Debug.Log(hit.collider.gameObject.tag); // TODO work on this. Tag layer maybe. Will not see item that is clicked all of the time.
 			}
