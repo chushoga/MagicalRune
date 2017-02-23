@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroppedPickup : MonoBehaviour {
+public class HealthMinorManager : MonoBehaviour {
 
+	[SerializeField]private GameObject pickup;
+	[SerializeField]private GameObject inventoryBar;
 
 	[SerializeField] float fallSpeed = 1f;
 	[SerializeField] float timeout = 5f;
@@ -33,6 +35,8 @@ public class DroppedPickup : MonoBehaviour {
 
 			// TODO give some bonus here
 			// give some bonus here
+			GameObject newButton = Instantiate (pickup) as GameObject;
+			newButton.transform.SetParent (inventoryBar.transform, false);
 
 			Destroy (this.gameObject);
 		} else if (coll.gameObject.tag == "OutOfBounds") {
