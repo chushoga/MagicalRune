@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthMinorManager : MonoBehaviour {
 
 	[SerializeField]private GameObject pickup;
-	[SerializeField]private GameObject inventoryBar;
+	private GameObject inventoryBar;
 
 	[SerializeField] float fallSpeed = 1f;
 	[SerializeField] float timeout = 5f;
@@ -18,6 +18,7 @@ public class HealthMinorManager : MonoBehaviour {
 
 	void Start (){
 		sr = gameObject.GetComponent<SpriteRenderer>();
+		inventoryBar = GameObject.Find("Inventory");
 	}
 
 	// Use this for initialization
