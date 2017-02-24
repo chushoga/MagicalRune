@@ -89,11 +89,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickup: {fileID: 1782480641597956, guid: 6ee915cc03d72d14184b43f6d9b0ed0d, type: 2}
-  inventoryBar: {fileID: 1686516660870330, guid: 6a4dd97a815180c44b97efd01fcc6799,
-    type: 2}
-  fallSpeed: 20
+  inventoryBar: {fileID: 0}
+  fallSpeed: 10
   timeout: 5
   icon: {fileID: 21300018, guid: cc921ac7f5e5e9c4db991ef91dfee5fd, type: 3}
+  stillFalling: 1
+  sr: {fileID: 0}
 --- !u!212 &212078084803549358
 SpriteRenderer:
   m_ObjectHideFlags: 1

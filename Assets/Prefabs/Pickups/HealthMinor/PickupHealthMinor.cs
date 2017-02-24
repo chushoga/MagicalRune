@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthMinorManager : MonoBehaviour {
+public class PickupHealthMinor: MonoBehaviour {
 
-	[SerializeField]private GameObject pickup;
-	private GameObject inventoryBar;
+	[SerializeField]GameObject pickup;
+	GameObject inventoryBar;
 
 	[SerializeField] float fallSpeed = 1f;
 	[SerializeField] float timeout = 5f;
 	public Sprite icon;
 
 	// check if the object is still falling or not.
-	private bool stillFalling = true;
+	bool stillFalling;
 
 	SpriteRenderer sr;
 
 	void Start (){
 		sr = gameObject.GetComponent<SpriteRenderer>();
 		inventoryBar = GameObject.Find("Inventory");
+		stillFalling = true;
 	}
 
 	// Use this for initialization
-	void Update () {
+	void FixedUpdate () {
 		if (stillFalling == true)
 		{
 			transform.position -= Vector3.up * fallSpeed * Time.deltaTime; // if still falling keep going. Else Dont.
@@ -36,8 +37,14 @@ public class HealthMinorManager : MonoBehaviour {
 
 			// TODO give some bonus here
 			// give some bonus here
+
+			// check the length of the inventory bar and remove the first picked item if count is greater than 3
+			if(inventoryBar.transform.childCount > 3){
+// WORKIGN ON THIS HERE........................
+			}
 			GameObject newButton = Instantiate (pickup) as GameObject;
 			newButton.transform.SetParent (inventoryBar.transform, false);
+
 
 			Destroy (this.gameObject);
 		} else if (coll.gameObject.tag == "OutOfBounds") {
