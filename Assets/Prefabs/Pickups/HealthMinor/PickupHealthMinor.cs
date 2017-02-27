@@ -39,9 +39,12 @@ public class PickupHealthMinor: MonoBehaviour {
 			// give some bonus here
 
 			// check the length of the inventory bar and remove the first picked item if count is greater than 3
-			if(inventoryBar.transform.childCount > 3){
-// WORKIGN ON THIS HERE........................
-			}
+			if(inventoryBar.transform.childCount > 2){
+				Debug.Log("Remove the first child " + inventoryBar.transform.childCount);
+				Destroy(inventoryBar.transform.GetChild(0).gameObject);
+			} 
+
+
 			GameObject newButton = Instantiate (pickup) as GameObject;
 			newButton.transform.SetParent (inventoryBar.transform, false);
 
