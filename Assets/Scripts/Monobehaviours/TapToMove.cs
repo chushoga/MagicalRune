@@ -72,16 +72,18 @@ public class TapToMove : MonoBehaviour {
 					endPoint.y = transform.position.y;
 					endPoint.z = transform.position.z;
 
+					// set move to flag clone to unactive and then it will destoy istelf after coroutine.
 					if(GameObject.Find("MoveToFlag(Clone)") != null){
-						Debug.Log("IT EXISTS");
+						
 						GameObject.Find("MoveToFlag(Clone)").SetActive(false);
+
 					}
 
 					// instantiate the move to flag.
 					StartCoroutine(RemoveFlag(moveToFlag, endPoint));
 
 				}
-				Debug.Log(hit.collider.gameObject.tag); // TODO work on this. Tag layer maybe. Will not see item that is clicked all of the time.
+				//Debug.Log(hit.collider.gameObject.tag); // TODO work on this. Tag layer maybe. Will not see item that is clicked all of the time.
 			}
 		}
 

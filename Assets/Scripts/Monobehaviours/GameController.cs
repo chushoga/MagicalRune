@@ -36,6 +36,14 @@ public class GameController : MonoBehaviour {
 		Instantiate(hazard[1], playerPosScreen, spawnRotation);
 		Debug.Log(playerPosScreen);
 */
+		Vector3 myScreen = new Vector3(Screen.width,Screen.height,0);
+		//print ("screen "+ myScreen.x);
+		Vector3 myWorld = Camera.main.ScreenToWorldPoint(myScreen);
+		print ("myWorld "+ myWorld.y);
+
+		// set the spawn width
+		spawnValues.x = myWorld.x - 0.5f;
+		spawnValues.y = myWorld.y * 2;
 		// -------------------------------------------------------------------------------------------------------------------------------------
 
 		score = 0; // start the core at 0

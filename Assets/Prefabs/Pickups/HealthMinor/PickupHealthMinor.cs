@@ -40,8 +40,7 @@ public class PickupHealthMinor: MonoBehaviour {
 
 			// check the length of the inventory bar and remove the first picked item if count is greater than 3
 			if(inventoryBar.transform.childCount > 2){
-				Debug.Log("Remove the first child " + inventoryBar.transform.childCount);
-				Destroy(inventoryBar.transform.GetChild(0).gameObject);
+				RemovePickup();
 			} 
 
 
@@ -56,6 +55,11 @@ public class PickupHealthMinor: MonoBehaviour {
 			// start the timout timer
 			StartCoroutine(removeDrop());
 		}
+	}
+
+	/* REMOVE PICKUP FROM INVENTORY BAR */
+	void RemovePickup() {
+		Destroy(inventoryBar.transform.GetChild(0).gameObject);
 	}
 
 	IEnumerator removeDrop(){

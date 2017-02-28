@@ -10,11 +10,9 @@ public class HealthMinor : MonoBehaviour {
 		// ADD A MINOR AMOUNT OF HEALTH
 		// TRIGGER ADD HEALTH SPARKLE EFFECT HERE.
 		GameController.playerHealth += health;
-		Debug.Log("Add some Health");
 	}
 
 	public void DestroyMe(){
-		Debug.Log("Destroy Me ok!");
 		Destroy (this.gameObject);
 	}
 
