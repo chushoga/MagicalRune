@@ -25,25 +25,16 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		// get the screen width and height
-		// -------------------------------------------------------------------------------------------------------------------------------------
-		// TEST
-		// set the spawn area
-		// -------------------------------------------------------------------------------------------------------------------------------------
-		/*
-		Vector3 playerPosScreen = new Vector3(7.5f, 7.5f, 0f);
-		Quaternion spawnRotation = Quaternion.identity;
-		Instantiate(hazard[1], playerPosScreen, spawnRotation);
-		Debug.Log(playerPosScreen);
-*/
-		Vector3 myScreen = new Vector3(Screen.width,Screen.height,0);
-		//print ("screen "+ myScreen.x);
-		Vector3 myWorld = Camera.main.ScreenToWorldPoint(myScreen);
-		print ("myWorld "+ myWorld.y);
 
-		// set the spawn width
+		// Get screen size
+		Vector3 myScreen = new Vector3(Screen.width,Screen.height,0);
+
+		// Convert screen size to world size
+		Vector3 myWorld = Camera.main.ScreenToWorldPoint(myScreen);
+
+		// set the spawn width and height
 		spawnValues.x = myWorld.x - 0.5f;
-		spawnValues.y = myWorld.y * 2;
+		spawnValues.y = (myWorld.y) + 0.5f;
 		// -------------------------------------------------------------------------------------------------------------------------------------
 
 		score = 0; // start the core at 0
@@ -73,8 +64,8 @@ public class GameController : MonoBehaviour {
                 Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 				Quaternion spawnRotation = Quaternion.identity;
 
-				// check if allready occupied
-				bool isOccupied = Physics2D.OverlapCircle(spawnPosition, 1f);
+				// check if allready occupied include only layer 10 (happends to be Drops)
+				bool isOccupied = Physics2D.OverlapCircle(spawnPosition, 1f, 10);
 
 				// if the space is not occupied then you can spawn.
 				if (isOccupied == false){
